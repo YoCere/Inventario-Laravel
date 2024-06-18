@@ -1,0 +1,1 @@
+<img src="{{asset('icono.png')}}" alt="" width="150" height="150" >
