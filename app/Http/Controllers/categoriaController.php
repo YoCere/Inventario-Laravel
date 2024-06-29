@@ -30,11 +30,11 @@ class categoriaController extends Controller
         $categoria->nombre=$request->nombre;
         $categoria->save();
 
-        return redirect()->route('roles.mostrar', $categoria->id);
+        return redirect()->route('categorias.mostrar', $categoria->id);
 
     }
     public function editar($rol){
-        $rol = Categoria::findOrFail($rol); 
+        $catego = Categoria::findOrFail($rol); 
         return view("categorias.editar", compact('catego'));
     }
     public function update(Request $request,Categoria $categoria){

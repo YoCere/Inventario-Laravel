@@ -8,7 +8,7 @@
     </header>
     <br>
     <div class="container size-11/12 m-auto">
-    <a href="{{route('roles.crear')}}"><button class="bg-red-500 hover:bg-green-700 text-white font-bold py-1 px-2 border border-red-500 rounded">Nueva Categoria</button></a>
+    <a href="{{route('categorias.crear')}}"><button class="bg-red-500 hover:bg-green-700 text-white font-bold py-1 px-2 border border-red-500 rounded">Nueva Categoria</button></a>
     <br>
     <table class="min-w-full border-collapse block md:table">
         <thead class="block md:table-header-group">
