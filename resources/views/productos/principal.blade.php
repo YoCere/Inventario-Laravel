@@ -27,8 +27,8 @@
             <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Precio</span>{{$produ->precio}}</td>
             <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Descripcion</span>{{$produ->descripcion}}</td>
             <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Categoria</span>{{$produ->categoria}}</td>
-            <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
-                <span class="inline-block w-1/3 md:hidden font-bold">Operaciones</span>
+            <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Operaciones</span>
+                
                 <button class="bg-green-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-green-500 rounded"><a href="{{route('producto.mostrar',$produ->id)}}">Ver </a></button>
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded"><a href="{{route('producto.editar',$produ)}}">Editar</a></button>
                 <form action="{{route('producto.borrar',$produ)}}"  method="POST">
