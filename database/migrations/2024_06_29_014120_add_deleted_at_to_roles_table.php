@@ -12,7 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('roles', function (Blueprint $table) {
-            $table->softDeletes(); 
+            if (!Schema::hasColumn('roles', 'deleted_at')) {
+                $table->softDeletes(); // Añade la columna 'deleted_at' para soft deletes
+            } 
         });
     }
 

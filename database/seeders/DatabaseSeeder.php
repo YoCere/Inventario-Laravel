@@ -7,8 +7,10 @@ namespace Database\Seeders;
 use App\Models\Categoria;
 use App\Models\Producto;
 use App\Models\Role;
+use App\Models\Profile;
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use Database\Factories\PerfilFactory;
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,7 +30,7 @@ class DatabaseSeeder extends Seeder
         Categoria::factory(5)->create();
         Producto::factory(30)->create();
         Role::factory(10)->create();
-
+        Profile::factory(10)->create();
 
     }
 }

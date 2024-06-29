@@ -13,14 +13,11 @@ return new class extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-
-            $table->string('cargo', 50);
+            $table->string('cargo');
             $table->text('biografia');
-
-            $table->unsignedBigInteger('user_id')->unique();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-
+            $table->unsignedBigInteger('user_id')->nullable(); // Permite valores nulos
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
