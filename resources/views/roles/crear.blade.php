@@ -5,14 +5,14 @@
         </div>
     </header>
     <!-- component -->
-    <div class='flex items-center justify-center min-h-screen from-teal-100 via-teal-300 to-teal-500 bg-gradient-to-br'>
+    <div class='flex items-center justify-center min-h-screen from-teal-100 via-teal-950 to-teal-500 bg-gradient-to-br'>
         <div class='w-full max-w-lg px-10 py-8 mx-auto bg-white rounded-lg shadow-xl'>
             <div class='max-w-md mx-auto space-y-6'>
     
                 <form action="{{route('roles.store')}}" method="POST">
                     @csrf
                     <h2 class="text-2xl font-bold ">Nuevo Rol</h2>
-                    <p class="my-4 opacity-70">Llene los campos del nuevo producto a crear un nuevo rol</p>
+                    <p class="my-4 opacity-70">Llene los campos para crear un nuevo rol</p>
                     <hr class="my-6">
                     <label class="uppercase text-sm font-bold opacity-70">Nombre</label>
                     <input type="text" name="nombre" class="p-3 mt-2 mb-4 w-full bg-slate-200 rounded border-2 border-slate-200 focus:border-slate-600 focus:outline-none">
