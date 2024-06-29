@@ -24,11 +24,11 @@ class rolController extends Controller
 
     public function store(Request $request)
     {
-        $pro=new Role();
-        $pro->nombre=$request->nombre;
-        $pro->save();
+        $rol=new Role();
+        $rol->nombre=$request->nombre;
+        $rol->save();
 
-        return redirect()->route('roles.mostrar', $pro->id);
+        return redirect()->route('roles.mostrar', $rol->id);
 
     }
     public function editar($rol){
@@ -43,22 +43,22 @@ class rolController extends Controller
     }
     
     public function borrar($id){
-        $producto=Role::find($id);
-        $producto->forceDelete();
+        $rolborrar=Role::find($id);
+        $rolborrar->forceDelete();
         return redirect()->route('roles.principal');
     }
 
     public function desactivarrol($id){
 
-        $producto=Role::find($id);
-        $producto->delete();
+        $role=Role::find($id);
+        $role->delete();
         return redirect()->route('roles.principal');
     }
 
     public function activarol($id){
         
-        $producto=Role::withTrashed()->find($id);
-        $producto->restore($id);
+        $role=Role::withTrashed()->find($id);
+        $role->restore($id);
 
         return redirect()->route('roles.principal');
     }

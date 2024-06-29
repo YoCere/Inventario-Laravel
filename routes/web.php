@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\categoriaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\inicioController;
 use App\Http\Controllers\productoController;
@@ -63,5 +64,27 @@ Route::middleware([ 'auth:sanctum', config('jetstream.auth_session'), 'verified'
         route::get('desactivarrol/{id}', 'desactivarrol')->name('desactivarol');
     
         route::get('activarol/{id}', 'activarol')->name('activarol');
+    });
+    Route::controller(categoriaController::class)->group(function(){
+
+        route::get('categoria', 'principal')->name('categorias.principal');
+
+        route::get('categoria/crear', 'crear')->name('categorias.crear');
+
+        route::post('categoria','store')->name('categorias.store');
+    
+        route::get('categoria/{variable}/mostrar', 'mostrar')->name('categorias.mostrar');
+
+        route::get('categoria/{categoria}/edit', 'editar')->name('categorias.editar');
+
+        route::delete('categoria/{id}', 'borrar')->name('categorias.borrar');
+
+        route::put('categoria/{categoria}', 'update')->name('categorias.update');
+        
+        route::delete('categoria/{id}', 'borrar')->name('categorias.borrar');
+    
+        route::get('desactivarcategoria/{id}', 'desactivarcategoria')->name('desactivacategoria');
+    
+        route::get('activacategoria/{id}', 'activacategoria')->name('activacategoria');
     });
 });
