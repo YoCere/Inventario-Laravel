@@ -34,8 +34,8 @@ class categoriaController extends Controller
 
     }
     public function editar($rol){
-        $catego = Categoria::findOrFail($rol); 
-        return view("categorias.editar", compact('catego'));
+        $cate = Categoria::findOrFail($rol); 
+        return view("categorias.editar", compact('cate'));
     }
     public function update(Request $request,Categoria $categoria){
         $categoria->nombre=$request->nombre;

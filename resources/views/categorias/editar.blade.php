@@ -10,18 +10,18 @@
         <div class='w-full max-w-lg px-10 py-8 mx-auto bg-white rounded-lg shadow-xl'>
             <div class='max-w-md mx-auto space-y-6'>
     
-                <form action="{{route('roles.update', $rol)}}" method="POST">
+                <form action="{{route('categorias.update', $cate)}}" method="POST">
                     @csrf
                     @method('put')
-                    <h2 class="text-2xl font-bold ">Actualizar el nombre del rol {{$rol->id}}</h2>
+                    <h2 class="text-2xl font-bold ">Actualizar el nombre de la categoria {{$cate->id}}</h2>
                     <p class="my-4 opacity-70">Modifique el nombre</p>
                     <hr class="my-6">
                     <label class="uppercase text-sm font-bold opacity-70">Nombre</label>
-                    <input type="text" name="nombre" value="{{$rol->nombre}}" class="p-3 mt-2 mb-4 w-full bg-slate-200 rounded border-2 border-slate-200 focus:border-slate-600 focus:outline-none">
+                    <input type="text" name="nombre" value="{{$cate->nombre}}" class="p-3 mt-2 mb-4 w-full bg-slate-200 rounded border-2 border-slate-200 focus:border-slate-600 focus:outline-none">
                     
                     <input type="submit" class="py-3 px-6 my-2 bg-emerald-500 text-white font-medium rounded hover:bg-indigo-500 cursor-pointer ease-in-out duration-300" value="Guardar Cambios">
                 </form>
-                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded"><a href="{{route('roles.principal')}}">Cancelar </a></button>
+                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded"><a href="{{route('categorias.principal')}}">Cancelar </a></button>
     
             </div>
         </div>
