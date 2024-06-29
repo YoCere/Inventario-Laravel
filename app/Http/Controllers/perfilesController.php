@@ -16,16 +16,16 @@ class perfilesController extends Controller
     public function crear()
     {
         $perfil=Profile::all();
-        return view('productos.crear',compact('categorias'));
+        return view('perfiles.crear',compact('categorias'));
     }
 
     public function mostrar($variable)
     {
-        $producto = Producto::find($variable);
+        $perfiles = Profile::find($variable);
 
-        $cat_id= $producto->categoria_id;
+        $cat_id= $perfiles->categoria_id;
 
-        $categoria=Categoria::find($cat_id);
+        $categoria=Pro::find($cat_id);
         // return view('productos.mostrar', ['prod'=>$variable]);
         return view("productos.mostrar", compact('producto','categoria'));
     }
