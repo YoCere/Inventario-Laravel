@@ -32,7 +32,8 @@ class rolController extends Controller
 
     }
     public function editar($rol){
-        return view("roles.editar", ['rol'=>$rol]);
+        $rol = Role::findOrFail($rol); 
+        return view("roles.editar", compact('rol'));
     }
     public function update(Request $request,Role $rol){
         $rol->nombre=$request->nombre;
