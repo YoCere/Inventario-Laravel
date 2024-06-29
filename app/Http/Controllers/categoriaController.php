@@ -21,7 +21,7 @@ class categoriaController extends Controller
     public function mostrar($variable)
     {
         $categoria = Categoria::find($variable);
-        return view('categorias.mostrar', ['role'=>$categoria]);
+        return view('categorias.mostrar', ['cate'=>$categoria]);
     }
 
     public function store(Request $request)
