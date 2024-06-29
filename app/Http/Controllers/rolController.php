@@ -31,11 +31,8 @@ class rolController extends Controller
         return redirect()->route('roles.mostrar', $pro->id);
 
     }
-    public function editar($id){
-        //$producto = Producto::find($id);
-        //return $producto;
-        $producto = Role::findOrFail($id); // Encuentra el rol por ID
-        return view("roles.editar", compact('producto'));
+    public function editar($rol){
+        return view("roles.editar", ['rol'=>$rol]);
     }
     public function update(Request $request,Role $rol){
         $rol->nombre=$request->nombre;

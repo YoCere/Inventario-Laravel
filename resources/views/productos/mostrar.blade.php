@@ -1,8 +1,4 @@
-@extends('layout.plantilla')
-
-@section('titulo','mostrar')
-
-@section('contenido')
+<x-app-layout>
 <header>
     <div class="mx-auto max-w-7x1 px-4 py-6 sm:px-6 lg:px-8">
         <h1 class="text-3x1 font-bold tracking-tight text-gray-900">Producto: {{$producto->id}}</h1>
@@ -50,5 +46,4 @@
 </div>
 
 
-
-@endsection
+</x-app-layout>

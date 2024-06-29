@@ -1,8 +1,4 @@
-@extends('layout.plantilla')
-
-@section('titulo', 'editar')
-
-@section('contenido')
+<x-app-layout>
 
 <header>
     <div class="mx-auto max-w-7x1 px-4 py-6 sm:px-6 lg:px-8">
@@ -44,4 +40,4 @@
 </div>
 
 
-@endsection
+</x-app-layout>
