@@ -50,14 +50,14 @@ class categoriaController extends Controller
         return redirect()->route('categorias.principal');
     }
 
-    public function desactivarrol($id){
+    public function desactivarcategoria($id){
 
         $categoriasde=Categoria::find($id);
         $categoriasde->delete();
         return redirect()->route('categorias.principal');
     }
 
-    public function activarol($id){
+    public function activacategoria($id){
         
         $categoriaact=Categoria::withTrashed()->find($id);
         $categoriaact->restore($id);
