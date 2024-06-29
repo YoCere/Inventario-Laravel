@@ -3,6 +3,7 @@
 use App\Http\Controllers\categoriaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\inicioController;
+use App\Http\Controllers\perfilesController;
 use App\Http\Controllers\productoController;
 use App\Http\Controllers\rolController;
 
@@ -86,5 +87,27 @@ Route::middleware([ 'auth:sanctum', config('jetstream.auth_session'), 'verified'
         route::get('desactivarcategoria/{id}', 'desactivarcategoria')->name('desactivacategoria');
     
         route::get('activacategoria/{id}', 'activacategoria')->name('activacategoria');
+    });
+    Route::controller(perfilesController::class)->group(function(){
+
+        route::get('perfil', 'principal')->name('perfiles.principal');
+
+        route::get('perfil/crear', 'crear')->name('perfiles.crear');
+
+        route::post('perfil','store')->name('perfiles.store');
+    
+        route::get('perfil/{variable}/mostrar', 'mostrar')->name('perfiles.mostrar');
+
+        route::get('perfil/{perfil}/edit', 'editar')->name('perfiles.editar');
+
+        route::delete('perfil/{id}', 'borrar')->name('perfiles.borrar');
+
+        route::put('perfil/{perfil}', 'update')->name('perfiles.update');
+        
+        route::delete('perfil/{id}', 'borrar')->name('perfiles.borrar');
+    
+        route::get('desactivarperfil/{id}', 'desactivarperfil')->name('desactivaperfil');
+    
+        route::get('activaperfil/{id}', 'activaperfil')->name('activaperfil');
     });
 });
