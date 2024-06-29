@@ -13,13 +13,13 @@ class rolController extends Controller
 
     public function crear()
     {
-        return view('productos.crear');
+        return view('roles.crear');
     }
 
     public function mostrar($variable)
     {
         $roles = Role::find($variable);
-        return view('productos.mostrar', ['role'=>$roles]);
+        return view('roles.mostrar', ['role'=>$roles]);
     }
 
     public function store(Request $request)
@@ -28,14 +28,14 @@ class rolController extends Controller
         $pro->nombre=$request->nombre;
         $pro->save();
 
-        return redirect()->route('producto.mostrar');
+        return redirect()->route('roles.mostrar', $pro->id);
 
     }
     public function editar($id){
         //$producto = Producto::find($id);
         //return $producto;
         $producto = Role::findOrFail($id); // Encuentra el rol por ID
-        return view("productos.editar", compact('producto'));
+        return view("roles.editar", compact('producto'));
     }
     public function update(Request $request,Role $rol){
         $rol->nombre=$request->nombre;
